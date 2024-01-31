@@ -8,16 +8,13 @@ cd gaussian-grouping
 ```
 
 Our default, provided install method is based on Conda package and environment management:
+
 ```bash
-conda create -n gaussian_grouping python=3.8 -y
+conda create -n gaussian_grouping -c conda-forge -y gxx=9.5 python=3.8 cudatoolkit-dev=11.3
 conda activate gaussian_grouping 
-
 conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=11.3 -c pytorch
-pip install plyfile==0.8.1
-pip install tqdm scipy wandb opencv-python scikit-learn lpips
-
-pip install submodules/diff-gaussian-rasterization
-pip install submodules/simple-knn
+pip install plyfile==0.8.1 tqdm scipy wandb opencv-python scikit-learn lpips
+pip install submodules/diff-gaussian-rasterization submodules/simple-knn
 ```
 
 (Optional) If you want to prepare masks on your own dataset, you will also need to prepare [DEVA](https://github.com/hkchengrex/Tracking-Anything-with-DEVA) environment.
